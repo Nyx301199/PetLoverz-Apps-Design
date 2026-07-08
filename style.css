@@ -113,33 +113,102 @@ body { background: #1a1a1a; display: flex; justify-content: center; align-items:
 
 .status-bar{
     position:absolute;
-    top:12px;
-    left:20px;
-    right:20px;
-
+    top:14px;
+    left:35px;
+    right:35px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     z-index:1000;
     color:#111;
 }
 
 .status-time{
     font-size:14px;
-    font-weight:700;
+    font-weight:800;
 }
 
+/* kanan */
 .status-icons{
     display:flex;
     align-items:center;
     gap:8px;
 }
 
-.status-icons i{
-    font-size:14px;
+/* sinyal */
+.cellular{
+    display:flex;
+    align-items:flex-end;
+    gap:2px;
+    height:12px;
 }
 
+.cellular span{
+    width:3px;
+    background:#111;
+    border-radius:2px;
+}
+
+.cellular span:nth-child(1){height:4px;}
+.cellular span:nth-child(2){height:6px;}
+.cellular span:nth-child(3){height:8px;}
+.cellular span:nth-child(4){height:10px;}
+
+/* wifi */
+.wifi-icon{
+    width:15px;
+    height:11px;
+    position:relative;
+}
+
+.wifi-icon::before{
+    content:"";
+    position:absolute;
+    width:15px;
+    height:15px;
+    border:3px solid #111;
+    border-color:#111 transparent transparent transparent;
+    border-radius:50%;
+    top:0;
+    left:0;
+}
+
+.wifi-icon::after{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:#111;
+    border-radius:50%;
+    bottom:0;
+    left:5px;
+}
+
+/* baterai */
+.battery{
+    width:22px;
+    height:11px;
+    border:2px solid #111;
+    border-radius:3px;
+    position:relative;
+}
+
+.battery::after{
+    content:"";
+    position:absolute;
+    right:-4px;
+    top:3px;
+    width:2px;
+    height:5px;
+    background:#111;
+    border-radius:1px;
+}
+
+.battery-level{
+    width:15px;
+    height:100%;
+    background:#111;
+}
 .notch{
     position:absolute;
     top:0;
