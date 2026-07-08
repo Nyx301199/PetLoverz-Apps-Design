@@ -139,45 +139,76 @@ body { background: #1a1a1a; display: flex; justify-content: center; align-items:
 .status-icons{
     display:flex;
     align-items:center;
-    gap:7px;
+    gap:8px;
 }
 
-/* WIFI lebih rapi */
-.wifi-icon{
-    width:16px;
-    height:12px;
+/* SIGNAL BAR */
+.signal-bars{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:16px;
+}
+
+.signal-bars span{
+    width:4px;
+    background:#000;
+    border-radius:3px;
+}
+
+.signal-bars span:nth-child(1){ height:6px; }
+.signal-bars span:nth-child(2){ height:9px; }
+.signal-bars span:nth-child(3){ height:12px; }
+.signal-bars span:nth-child(4){ height:15px; }
+
+/* WIFI */
+.wifi-symbol{
     position:relative;
-    overflow:hidden;
+    width:20px;
+    height:16px;
 }
 
-.wifi-icon::before{
-    content:"";
+.wifi-symbol span{
     position:absolute;
-    left:1px;
+    left:50%;
+    transform:translateX(-50%);
+    border:3px solid #000;
+    border-color:#000 transparent transparent transparent;
+    border-radius:50%;
+}
+
+.wifi-symbol span:nth-child(1){
+    width:20px;
+    height:20px;
     top:0;
+}
+
+.wifi-symbol span:nth-child(2){
     width:14px;
     height:14px;
-    border:3px solid #111;
-    border-color:#111 transparent transparent transparent;
-    border-radius:50%;
+    top:5px;
 }
 
-.wifi-icon::after{
-    content:"";
-    position:absolute;
-    left:6px;
-    bottom:1px;
+.wifi-symbol span:nth-child(3){
+    width:8px;
+    height:8px;
+    top:10px;
+}
+
+.wifi-symbol span:nth-child(4){
     width:4px;
     height:4px;
-    background:#111;
+    background:#000;
+    border:none;
     border-radius:50%;
+    top:13px;
 }
 
-/* BATTERY lebih mirip iPhone */
+/* BATTERY */
 .battery{
     width:24px;
     height:12px;
-    border:1.8px solid #111;
+    border:2px solid #000;
     border-radius:3px;
     position:relative;
     padding:1px;
@@ -186,21 +217,20 @@ body { background: #1a1a1a; display: flex; justify-content: center; align-items:
 .battery::after{
     content:"";
     position:absolute;
-    right:-4px;
+    right:-5px;
     top:3px;
-    width:2px;
+    width:3px;
     height:5px;
-    background:#111;
-    border-radius:0 2px 2px 0;
+    background:#000;
+    border-radius:1px;
 }
 
 .battery-level{
-    width:17px;
+    width:16px;
     height:100%;
-    background:#111;
-    border-radius:2px;
+    background:#000;
+    border-radius:1px;
 }
-
 .notch{
     position:absolute;
     top:0;
