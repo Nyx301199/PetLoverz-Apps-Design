@@ -139,3 +139,18 @@ body { background: #1a1a1a; display: flex; justify-content: center; align-items:
 .status-icons i{
     font-size:14px;
 }
+
+.notch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:170px;
+    height:32px;
+
+    background:#000;
+    border-radius:0 0 18px 18px;
+
+    z-index:1001;
+}
