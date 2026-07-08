@@ -1,0 +1,96 @@
+:root {
+    --purple: #7B61FF;
+    --orange: #FF9F43;
+    --teal: #2EC4B6;
+    --bg: #F8F9FE;
+    --dark: #2D3436;
+    --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { background: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.smartphone-frame {
+    width: 380px; height: 800px; background: #fff;
+    border-radius: 45px; border: 10px solid #333;
+    position: relative; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+.app-container { height: 100%; background: var(--bg); position: relative; }
+
+/* Screen Management */
+.screen { display: none; height: 100%; flex-direction: column; }
+.screen.active { display: flex; }
+
+/* Login Screen Styling */
+.login-box { padding: 40px; text-align: center; margin: auto 0; }
+.logo { font-size: 60px; margin-bottom: 10px; }
+.login-box h1 { font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+.login-box p { color: gray; font-size: 0.9rem; margin-bottom: 30px; }
+.input-group input { width: 100%; padding: 16px; margin-bottom: 15px; border-radius: 15px; border: 1px solid #ddd; outline: none; background: #fdfdfd; }
+#login-btn { width: 100%; padding: 18px; background: var(--purple); color: white; border: none; border-radius: 15px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+#login-btn:hover { opacity: 0.9; }
+#login-error { color: #FF6B6B; font-size: 0.8rem; margin-top: 15px; height: 1rem; }
+
+/* Header & Nav */
+.app-header { padding: 25px 20px; display: flex; justify-content: space-between; align-items: center; }
+.user-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid white; }
+.icon-notif { background: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.bottom-navbar { 
+    position: absolute; bottom: 0; width: 100%; height: 85px; background: white;
+    display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #f0f0f0; padding-bottom: 15px; z-index: 100;
+}
+.nav-btn { text-align: center; color: #b2bec3; cursor: pointer; font-size: 0.65rem; transition: 0.3s; }
+.nav-btn.active { color: var(--purple); font-weight: 700; }
+.nav-btn i { font-size: 1.5rem; display: block; margin-bottom: 2px; }
+
+/* Content Components */
+.scrollable { flex: 1; overflow-y: auto; padding-bottom: 110px; scrollbar-width: none; -ms-overflow-style: none; }
+.scrollable::-webkit-scrollbar { display: none; }
+.section-header { padding: 0 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: 800; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 20px; margin: 20px 0; }
+.feature-card { background: white; padding: 15px 5px; border-radius: 22px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s; }
+.feature-card:hover { transform: translateY(-3px); }
+.feature-card i { font-size: 1.8rem; margin-bottom: 5px; display: block; }
+.feature-card span { font-size: 0.7rem; font-weight: 700; color: #636e72; }
+.booking-item { background: white; margin: 0 20px 12px; padding: 18px; border-radius: 20px; display: flex; align-items: center; border: 2px solid transparent; transition: 0.2s; cursor: pointer; }
+.booking-item.selected { border-color: var(--orange); background: #FFF9F4; }
+.price-tag { font-weight: 800; margin-left: auto; background: #f8f9fa; padding: 5px 10px; border-radius: 10px; }
+.booking-footer { position: absolute; bottom: 85px; width: 100%; background: white; padding: 20px; border-top: 1px solid #eee; display: flex; flex-direction: column; gap: 10px; }
+.post-card { background: white; margin: 0 20px 15px; padding: 15px; border-radius: 25px; }
+.post-img { width: 100%; height: 180px; border-radius: 20px; object-fit: cover; margin: 10px 0; }
+.p-item { display: flex; align-items: center; gap: 15px; padding: 18px; background: white; margin: 0 20px 10px; border-radius: 20px; font-weight: 700; cursor: pointer; }
+
+/* Styles for New Features */
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    margin: 0 20px 12px;
+    padding: 18px;
+    border-radius: 20px;
+}
+.action-btn {
+    background: var(--purple);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+.action-btn:hover { opacity: 0.8; }
+
+.screen {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efek klik pada tombol */
+.action-btn:active, .feature-card:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetLovers App - Final</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="smartphone-frame">
+    <div class="app-container">
+        
+        <section id="login-screen" class="screen active">
+            <div class="login-box">
+                <div class="logo">🐾</div>
+                <h1>PetLovers</h1>
+                <p>Silakan masuk untuk akses fitur lengkap</p>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <button onclick="handleLogin()" id="login-btn">Masuk Sekarang</button>
+                <p id="login-error"></p>
+            </div>
+        </section>
+        
+        <section id="main-app" class="screen">
+            <header class="app-header" id="dynamic-header">
+                <div class="user-info">
+                    <img src="https://i.pravatar.cc/100?img=10" class="user-img">
+                    <div>
+                        <p>Halo, Nadin! 👋</p>
+                        <small>Semangat merawat hari ini</small>
+                    </div>
+                </div>
+                <div class="icon-notif"><i class="ri-notification-3-line"></i></div>
+            </header>
+            <main id="main-content" class="scrollable"></main>
+            <nav class="bottom-navbar" id="main-nav">
+                <div class="nav-btn active" onclick="switchPage('home', this)"><i class="ri-home-5-fill"></i><span>Beranda</span></div>
+                <div class="nav-btn" onclick="switchPage('medis', this)"><i class="ri-heart-pulse-line"></i><span>Medis</span></div>
+                <div class="nav-btn" onclick="switchPage('booking', this)"><i class="ri-calendar-todo-line"></i><span>Booking</span></div>
+                <div class="nav-btn" onclick="switchPage('komunitas', this)"><i class="ri-group-line"></i><span>Komunitas</span></div>
+                <div class="nav-btn" onclick="switchPage('profil', this)"><i class="ri-user-3-line"></i><span>Profil</span></div>
+            </nav>
+        </section>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
