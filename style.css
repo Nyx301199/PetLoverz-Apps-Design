@@ -106,3 +106,24 @@ body { background: #1a1a1a; display: flex; justify-content: center; align-items:
 .action-btn:active, .feature-card:active {
     transform: scale(0.95);
 }
+
+.status-bar {
+    height: 32px;
+    padding: 12px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icons i {
+    font-size: 0.9rem;
+}
