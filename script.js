@@ -151,9 +151,18 @@ function renderCheckout() {
                 <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
                 <div style="display:flex; justify-content:space-between; font-size:1.2rem"><b>Total Bayar</b><b style="color:#FF9F43">Rp ${selectedService.price.toLocaleString('id-ID')}</b></div>
             </div>
-            <button onclick="alert('Pembayaran Berhasil!'); switchPage('home')" style="width:100%; padding:18px; background:#7B61FF; color:white; border:none; border-radius:20px; font-weight:800; margin-top:30px; cursor:pointer">BAYAR SEKARANG</button>
+            <button onclick="showSuccessPopup()" style="width:100%; padding:18px; background:#7B61FF; color:white; border:none; border-radius:20px; font-weight:800; margin-top:30px; cursor:pointer">BAYAR SEKARANG</button>
         </div>
     `;
+}
+
+function showSuccessPopup(){
+    document.getElementById("success-popup").classList.add("active");
+}
+
+function closeSuccessPopup(){
+    document.getElementById("success-popup").classList.remove("active");
+    switchPage("home", document.querySelector(".nav-btn"));
 }
 
 // --- LOGIKA KERANJANG TOKO OBAT ---
@@ -329,6 +338,29 @@ function renderProfil() {
             <p style="color:gray">nadin.amizah@petmail.com</p>
         </div>
         <div class="p-item" style="margin-top:20px"><i class="ri-user-settings-line"></i> Pengaturan Akun</div>
-        <div class="p-item" style="color:#FF6B6B" onclick="location.reload()"><i class="ri-logout-box-r-line"></i> Keluar</div>
+        <div class="p-item" style="color:#FF6B6B" onclick="showLogoutPopup()">
+            <i class="ri-logout-box-r-line"></i> Keluar
+        </div>
     `;
+}
+
+function showLogoutPopup(){
+    document.getElementById("logout-popup").classList.add("active");
+}
+
+function closeLogoutPopup(){
+    document.getElementById("logout-popup").classList.remove("active");
+}
+
+function confirmLogout(){
+
+    document.getElementById("logout-popup").classList.remove("active");
+
+    loginScreen.classList.add("active");
+    mainApp.classList.remove("active");
+
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+
+    switchPage("home", document.querySelector(".nav-btn"));
 }
