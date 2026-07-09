@@ -44,9 +44,19 @@
                 <h1>PetLovers Apps</h1>
                 <p>Silakan masuk untuk akses fitur lengkap</p>
                 <div class="input-group">
-                    <input type="text" id="username" placeholder="Username">
-                    <input type="password" id="password" placeholder="Password">
+
+                    <div class="input-box">
+                        <i class="ri-user-3-line"></i>
+                        <input type="text" id="username" placeholder="Username(admin)">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="ri-lock-2-line"></i>
+                        <input type="password" id="password" placeholder="Password (1234)">
+                    </div>
+
                 </div>
+
                 <button onclick="handleLogin()" id="login-btn">Masuk Sekarang</button>
                 <p id="login-error"></p>
             </div>
@@ -76,5 +86,32 @@
     </div>
 </div>
 <script src="script.js"></script>
+
+<div id="success-popup" class="success-popup">
+    <div class="success-box">
+        <div class="checkmark">✓</div>
+        <h3>Pembayaran Berhasil!</h3>
+        <p>Pesanan kamu sudah dikonfirmasi.</p>
+        <button onclick="closeSuccessPopup()">Oke</button>
+    </div>
+</div>
+
+<div id="logout-popup" class="logout-popup">
+    <div class="logout-box">
+        <h3>Keluar Akun?</h3>
+        <p>Apakah Anda yakin ingin logout dari aplikasi PetLovers?</p>
+
+        <div class="logout-actions">
+            <button class="cancel-btn" onclick="closeLogoutPopup()">
+                Batal
+            </button>
+
+            <button class="logout-btn" onclick="confirmLogout()">
+                Logout
+            </button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
